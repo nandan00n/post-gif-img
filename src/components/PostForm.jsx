@@ -18,7 +18,7 @@ const PostForm = ({ item, handleSubmit,
     e.preventDefault();
     handleSubmit(gif);
     setgif("");
-    setShow(!show)
+    // setShow(!show)
   };
 
 
@@ -53,7 +53,7 @@ const PostForm = ({ item, handleSubmit,
         </div>
       </form>
 
-      {show ? <Gif gettext={gettext} /> : null}
+      {show ? <Gif gettext={gettext} handleClick={handleClick}/> : null}
       <button className="gif" onClick={handleClick}>gif</button>
 
     </>

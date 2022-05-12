@@ -6,7 +6,7 @@ import React from "react";
 import ReactGiphySearchbox from "react-giphy-searchbox";
 // import githubLogo from "./assets/github.png";
 
-const Gif = ({gettext}) => (
+const Gif = ({gettext, handleClick}) => (
     <>
          <a href="https://developers.giphy.com/docs/api/schema/#gif-object"
                 target="_blank"
@@ -16,7 +16,8 @@ const Gif = ({gettext}) => (
                 <ReactGiphySearchbox
                     apiKey="9Ixlv3DWC1biJRI57RanyL7RTbfzz0o7"
                     onSelect={(item) => {gettext(item.embed_url)
-                    console.log(item);
+                    console.log(item)
+                    {handleClick()};
                     }}
                     masonryConfig={[
                         { columns: 2, imageWidth: 110, gutter: 5 },
