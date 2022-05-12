@@ -17,8 +17,8 @@ const PostForm = ({ item, handleSubmit,
 
   const onSubmit = (e) => {
     e.preventDefault();
-    handleSubmit(text);
     handleSubmit(gif);
+    handleSubmit(text);
     setgif("")
     setText("");
     // setShow(!show)
@@ -56,8 +56,9 @@ const PostForm = ({ item, handleSubmit,
             <div className="gif__area" onClick={(e) => setgif(e.target.value)} value={gif}>
             {gif}
             </div>
-            <button type="submit" className="post__button"  value={text}>{submitLabel}</button>
-            <button type="submit" className="gif__button" onClick={handleClick} value={gif}>Gif</button>
+            <button  className="post__button" value={text}>{submitLabel}</button>
+           
+            <button className="gif__button" value={gif} onClick={handleClick}>Gif</button>
           </form>
         </section>
       </div>
