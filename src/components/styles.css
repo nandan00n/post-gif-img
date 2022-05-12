@@ -1,0 +1,4 @@
+.posts > h3{
+    display: flex;
+    background-color: blue;
+}
