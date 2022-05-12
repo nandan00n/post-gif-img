@@ -1,4 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(#00C6FF, #0078FF);
+}
+::selection{
+  color: #fff;
+  background: #1a81ff;
+}
+.container{
+  width: 45Vw;
+  height: 80vh;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 10px;
+  transition: height 0.2s ease;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.container .wrapper{
+  width: auto;
+  display: flex;
+}
+.container .wrapper section{
+  width: 100vw;
+  height: 42vh;
+  background: #fff;
+}
+.container img{
+  cursor: pointer;
+}
+.container .post{
+  transition: margin-left 0.18s ease;
+}
+
 .posts > h3{
     display: flex;
-    background-color: blue;
+    background-color: #1a81ff;
+    justify-content: center;
+}
+
+.post form{
+  margin: 3vh auto;
+  width: 40vw;
+  height: 60vh;
+}
+.post form .content,
+ .list li .column{
+  display: flex;
+  align-items: center;
+}
+.post form .content img{
+  cursor: default;
+  max-width: 52px;
+}
+.post form .content .details{
+  margin: -3px 0 0 12px;
+}
+form .content .details p{
+  font-size: 17px;
+  font-weight: 500;
+}
+
+form :where(button){
+  width: 20%;
+  outline: none;
+  border: none;
+}
+
+form :where(textarea){
+    width: 100%;
+    outline: none;
+    border: none;
+  }
+
+form textarea{
+  height: 5vh;
+  resize: none;
+  font-size: 18px;
+  margin-top: 30px;
+  /* min-height: 100px; */
+}
+form textarea::placeholder{
+  color: #858585;
+}
+form textarea:focus::placeholder{
+  color: #b3b3b3;
+}
+
+.post__button{
+  margin: 2vh 0 0 8vw;
+  height: 3vw;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #BCC0C4;
+  cursor: no-drop;
+  border-radius: 7px;
+  background: #e2e5e9;
+  transition: all 0.3s ease;
+}
+form textarea:valid ~ button{
+  color: #fff;
+  cursor: pointer;
+  background: #4599FF;
+}
+form textarea:valid ~ button:hover{
+  background: #1a81ff;
+}
+
+.gif__area{
+    width: 35vw;
+    height: 15vh;
+    border: transparent;
+}
+
+.gif__button{
+  margin: 2vh 0 0 8vw;
+  height: 3vw;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #BCC0C4;
+  cursor: no-drop;
+  border-radius: 7px;
+  background: #e2e5e9;
+  transition: all 0.3s ease;
+
 }

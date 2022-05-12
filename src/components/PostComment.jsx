@@ -1,14 +1,14 @@
 import PostForm from "./PostForm";
 
-const PostComment = ({ 
-  post, 
-  replies, 
-  currentUserId, 
-  updatePost, 
-  deletedPost, 
-  addPost, 
-  activePost, 
-  setActivePost, 
+const PostComment = ({
+  post,
+  replies,
+  currentUserId,
+  updatePost,
+  deletedPost,
+  addPost,
+  activePost,
+  setActivePost,
   parentId = null, }) => {
   const fiveMinutes = 300000;
   const timePassed = new Date() - new Date(post.createdAt) > fiveMinutes;
@@ -32,14 +32,13 @@ const PostComment = ({
         <img src={require("../images/user-icon.png")} alt="icon" />
       </div>
 
-      <div className="post__right__part">
+      <div className="post__right__part" style={{ backgroundColor: "white", borderRadius: "10px" }}>
         <div className="post__content">
-          <div className="post__author">{post.username}</div>
-
+          <div className="post__author" >{post.username}</div>
 
           <div>{createdAt}</div>
         </div>
-        {!isEditing && <div className="post__text">{post.body}</div>}
+        {!isEditing && <div className="post__text" style={{ marginRight: "5vw" }}>{post.body}</div>}
         {isEditing && (
           <PostForm submitLabel="Update"
             hasCancelButton
@@ -47,7 +46,7 @@ const PostComment = ({
             handleSubmit={(text) => updatePost(text, post.id)}
             handleCancel={() => setActivePost(null)} />
         )}
-        <div className="post__actions">
+        <div className="post__actions" >
           {canReply && <div className="post__action"
             onClick={() => setActivePost({ id: post.id, type: 'replying' })
             }>Reply</div>}
@@ -73,7 +72,7 @@ const PostComment = ({
                 updatePost={updatePost}
                 deletedPost={deletedPost}
                 parentId={post.id} />
-               
+
             ))}
           </div>
         )}

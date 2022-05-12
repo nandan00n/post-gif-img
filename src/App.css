@@ -34,6 +34,9 @@ h1{
 
 .post__form__title {
   font-size: 22px;
+  display: flex;
+  justify-content: center;
+  margin: 1vw;
 }
 
 .post__form__textarea {
@@ -119,8 +122,6 @@ h1{
 }
 
  .gif{
-  /* position: absolute; */
-
   left:10;
   top: 100;
   font-size: 1rem;

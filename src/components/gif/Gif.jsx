@@ -12,7 +12,7 @@ const Gif = ({gettext, handleClick}) => (
                 target="_blank"
                 rel="noopener noreferrer">
             </a>
-            <div className="searchboxWrapper" style={{ backgroundColor:"white", width: "auto"}}>
+            <div className="searchboxWrapper" style={{ backgroundColor:"white", width: "auto", margin:"auto"}}>
                 <ReactGiphySearchbox
                     apiKey="9Ixlv3DWC1biJRI57RanyL7RTbfzz0o7"
                     onSelect={(item) => {gettext(item.embed_url)
@@ -20,8 +20,8 @@ const Gif = ({gettext, handleClick}) => (
                     {handleClick()};
                     }}
                     masonryConfig={[
-                        { columns: 2, imageWidth: 110, gutter: 5 },
-                        { mq: "700px", columns: 6, imageWidth: 120, gutter: 5}
+                        { columns: 2, imageWidth: 80, gutter: 5 },
+                        { mq: "700px", columns: 6, imageWidth: 93, gutter: 5}
                     ]}
                 />
     </div>

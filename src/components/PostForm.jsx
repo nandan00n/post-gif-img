@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Gif from "./gif/Gif";
+import './styles.css';
 
 const PostForm = ({ item, handleSubmit,
   submitLabel,
@@ -16,13 +17,15 @@ const PostForm = ({ item, handleSubmit,
 
   const onSubmit = (e) => {
     e.preventDefault();
+    handleSubmit(text);
     handleSubmit(gif);
-    setgif("");
+    setgif("")
+    setText("");
     // setShow(!show)
   };
 
 
-  const gettext = (gifs) => {
+  const getgif = (gifs) => {
     console.log(gifs, 'post');
     setgif(gifs)
   }
@@ -32,32 +35,68 @@ const PostForm = ({ item, handleSubmit,
   }
 
   return (
-    <>
-      <form onSubmit={onSubmit}>
-        <div className="text__container" >
+    <div className="container">
+      <div className="wrapper">
+        <section className="post">
+          <form onSubmit={onSubmit}>
+            <div className="content">
+              <img style={{ backgroundColor: '#1a81ff', borderRadius: "50%" }} src={require("../images/logo2.png")} alt="logo" />
+              <div className="details">
+
+                <i className="fas fa-user-friends"></i>
+                <span>Friends</span>
+                <i className="fas fa-caret-down"></i>
+
+              </div>
+            </div>
+            <textarea onChange={(e) => setText(e.target.value)} value={text} placeholder="What's on your mind" />
+
+            {/* gif image will come here */}
+
+            <div className="gif__area" onClick={(e) => setgif(e.target.value)} value={gif}>
+            {gif}
+            </div>
+            <button type="submit" className="post__button"  value={text}>{submitLabel}</button>
+            <button type="submit" className="gif__button" onClick={handleClick} value={gif}>Gif</button>
+          </form>
+        </section>
+      </div>
+
+      {show ? <Gif gettext={getgif} handleClick={handleClick} /> : null}
+      {/* <button className="gif__button" onChange={(e) => setgif(e.target.value)} value={gif} onClick={handleClick}>Gif</button> */}
+
+    </div>
+
+
+  )
+}
+
+export default PostForm;
+
+{/* <form onSubmit={onSubmit}>
+        <div classNameName="text__container" >
 
           <textarea onChange={(e) => setgif(e.target.value)}  value={gif} />
 
-          <button className="post__form__button"  
+          <button classNameName="post__form__button"  
             // disabled={isTextareaDisabled}
             >{submitLabel}
           </button>
 
           {hasCancelButton && (
-            <button type="button" className="cancel__button post__form__cancel__buttom"
+            <button type="button" classNameName="cancel__button post__form__cancel__buttom"
               onClick={handleCancel}>
               Cancel
             </button>
           )}
 
         </div>
-      </form>
-
+      </form> */}
+{/* 
       {show ? <Gif gettext={gettext} handleClick={handleClick}/> : null}
-      <button className="gif" onClick={handleClick}>gif</button>
+      <button classNameName="gif" onClick={handleClick}>gif</button>
 
-    </>
+    {/* </>
   )
-}
+} */}
 
-export default PostForm;
