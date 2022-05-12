@@ -17,8 +17,8 @@ const PostForm = ({ item, handleSubmit,
 
   const onSubmit = (e) => {
     e.preventDefault();
-    handleSubmit(gif);
     handleSubmit(text);
+    handleSubmit(gif);
     setgif("")
     setText("");
     // setShow(!show)

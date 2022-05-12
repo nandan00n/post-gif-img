@@ -1,10 +1,5 @@
-
-
 import React from "react";
-// import ReactDOM from "react-dom";
-// import "./styles.css";
 import ReactGiphySearchbox from "react-giphy-searchbox";
-// import githubLogo from "./assets/github.png";
 
 const Gif = ({gettext, handleClick}) => (
     <>
@@ -15,8 +10,8 @@ const Gif = ({gettext, handleClick}) => (
             <div className="searchboxWrapper" style={{ backgroundColor:"white", width: "auto", margin:"auto"}}>
                 <ReactGiphySearchbox
                     apiKey="9Ixlv3DWC1biJRI57RanyL7RTbfzz0o7"
-                    onSelect={(item) => {gettext(item.embed_url)
-                    console.log(item)
+                    onSelect={(item) => {gettext(item.images.fixed_height.url)
+                    console.log(item.images.fixed_height.url)
                     {handleClick()};
                     }}
                     masonryConfig={[
