@@ -18,6 +18,7 @@ const PostForm = ({ item, handleSubmit,
     e.preventDefault();
     handleSubmit(gif);
     setgif("");
+    setShow(!show)
   };
 
 

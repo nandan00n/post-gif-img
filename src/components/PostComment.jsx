@@ -67,12 +67,13 @@ const PostComment = ({
               <PostComment post={reply}
                 key={reply.id}
                 replies={[]}
+                // setActivePost={setActivePost}
                 currentUserId={currentUserId}
                 addPost={addPost}
                 updatePost={updatePost}
                 deletedPost={deletedPost}
                 parentId={post.id} />
-
+               
             ))}
           </div>
         )}
